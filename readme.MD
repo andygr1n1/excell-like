@@ -18,10 +18,10 @@ background: url('./icon.png');
 
 Warning
 Only the default export of JSON modules can be used without warning.
-// No warning
+// No warning ->>
 import data from './data.json';
 
-// Warning shown, this is not allowed by the spec.
+// Warning shown, this is not allowed by the spec ->>
 import { foo } from './data.json';
 
 ########################################
