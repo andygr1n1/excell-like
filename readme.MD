@@ -25,3 +25,8 @@ import data from './data.json';
 import { foo } from './data.json';
 
 ########################################
+
+webpack5 + tailwind
+https://gsc13.medium.com/how-to-configure-webpack-5-to-work-with-tailwindcss-and-postcss-905f335aac2
+
+########################################
