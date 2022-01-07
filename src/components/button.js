@@ -1,4 +1,4 @@
-import styles from './button.scss'
+import styles from './button.module.scss'
 
 export const button = (title = '', href = '') => {
     console.log(title, href)

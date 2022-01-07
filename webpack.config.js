@@ -6,7 +6,7 @@ console.log('isProduction', isProduction)
 
 const config = {
     entry: {
-        index: './src/js/index.js',
+        index: './src/index.js',
         //js_file: './src/js_file.js',
     },
     devtool: 'inline-source-map',
