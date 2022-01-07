@@ -5,7 +5,7 @@ export const AboutUs = () => {
     const andygr1n1 = document.createElement('h1')
     const wrapper = document.createElement('div')
 
-    const aboutUsButton = button('return to homepage', '/')
+    const aboutUsButton = button('return to homepage', './index.html')
 
     andygr1n1.classList.add(styles.h1)
 

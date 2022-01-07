@@ -4,7 +4,7 @@ export const Home = () => {
     const hello = document.createElement('h1')
     const wrapper = document.createElement('div')
 
-    const aboutUsButton = button('About us', '/about.html')
+    const aboutUsButton = button('About us', './about.html')
 
     hello.classList.add(
         'bg-gradient-to-r',
