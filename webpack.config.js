@@ -17,6 +17,7 @@ const config = {
     },
     devServer: {
         static: './dist',
+        port: 8887,
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -40,7 +41,12 @@ const config = {
             },
             {
                 test: /\.css|.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                    'postcss-loader',
+                ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
