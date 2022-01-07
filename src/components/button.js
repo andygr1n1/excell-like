@@ -1,10 +1,10 @@
-import './button.css'
+import styles from './button.scss'
 
 export const button = (title = '', href = '') => {
     console.log(title, href)
     const button = document.createElement('button')
     const link = document.createElement('a')
-    button.classList.add('button')
+    button.classList.add(styles['button'])
 
     button.textContent = title
 

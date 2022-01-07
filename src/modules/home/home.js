@@ -1,34 +1,16 @@
 import { button } from '../../components/button'
+import styles from './home.module.scss'
 
 export const Home = () => {
-    const hello = document.createElement('h1')
+    const title = document.createElement('h1')
     const wrapper = document.createElement('div')
-
     const aboutUsButton = button('About us', './about.html')
 
-    hello.classList.add(
-        'bg-gradient-to-r',
-        'from-green-400',
-        'to-blue-500',
-        'text-transparent',
-        'text-9xl',
-        'bg-clip-text',
-        'font-extrabold'
-    )
+    title.textContent = 'Hello Pro!'
+    title.classList.add(styles['title'])
+    wrapper.classList.add(styles['wrapper'])
 
-    wrapper.classList.add(
-        'flex',
-        'flex-col',
-        'gap-20',
-        'w-full',
-        'h-screen',
-        'justify-center',
-        'items-center',
-        'bg-gray-200'
-    )
-
-    hello.textContent = 'Hello Pro!'
-    wrapper.appendChild(hello)
+    wrapper.appendChild(title)
     wrapper.appendChild(aboutUsButton)
     document.body.appendChild(wrapper)
 }
