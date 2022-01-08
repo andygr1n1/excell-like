@@ -1,3 +1,30 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+    html,
+    body {
+        @apply h-full;
+    }
+    body {
+        @apply flex;
+    }
+    body > div {
+        @apply flex-auto flex-wrap;
+    }
+
+    h1 {
+        @apply py-2 text-5xl xl:text-7xl font-extrabold select-none;
+    }
+}
+
+@layer components {
+    .color-title {
+        @apply bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text;
+    }
+}
+
+@layer utilities {
+    
+}
