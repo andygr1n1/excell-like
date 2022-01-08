@@ -1,5 +1,5 @@
 import './styles/index.css'
-import { Home } from './modules/home/home.js'
+import { Home } from './modules/home/home'
 import { AboutUs } from './modules/about-us/about-us'
 
 const root = () => {

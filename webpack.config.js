@@ -6,10 +6,13 @@ console.log('isProduction', isProduction)
 
 const config = {
     entry: {
-        index: './src/index.js',
+        index: './src/index.ts',
         //js_file: './src/js_file.js',
     },
     devtool: 'inline-source-map',
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+    },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -36,8 +39,9 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/i,
-                loader: 'babel-loader',
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
             {
                 test: /\.css|.s[ac]ss$/i,

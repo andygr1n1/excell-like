@@ -7,7 +7,7 @@ export const AboutUs = () => {
 
     const aboutUsButton = button('return to homepage', './index.html')
 
-    aboutUsRoot.classList.add(styles['wrapper'])
+    aboutUsRoot?.classList.add(styles['wrapper'])
 
     andygr1n1.textContent = 'andygr1n1'
     andygr1n1.classList.add(
@@ -17,6 +17,6 @@ export const AboutUs = () => {
         'p-4',
         'hover:animate-pulse'
     )
-    aboutUsRoot.appendChild(andygr1n1)
-    aboutUsRoot.appendChild(aboutUsButton)
+    aboutUsRoot?.appendChild(andygr1n1)
+    aboutUsRoot?.appendChild(aboutUsButton)
 }
