@@ -4,7 +4,14 @@ module.exports = {
         es2021: true,
         node: true,
     },
-    extends: ['eslint:recommended', 'prettier'],
+    root: true,
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint'],
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+    ],
     parserOptions: {
         ecmaVersion: 13,
         sourceType: 'module',
@@ -13,5 +20,14 @@ module.exports = {
         semi: ['warn', 'never'] /* always, never */,
         quotes: ['error', 'single'],
         indent: ['warn', 4],
+        '@typescript-eslint/no-explicit-any': 'warn',
+        '@typescript-eslint/no-var-requires': 'warn',
+        'prefer-const': [
+            'error',
+            {
+                destructuring: 'all',
+                ignoreReadBeforeAssign: false,
+            },
+        ],
     },
 }
