@@ -1,0 +1,7 @@
+.h1 {
+    @apply bg-gradient-to-r  from-green-400 to-blue-500 text-transparent text-9xl pb-5 border border-emerald-500 bg-clip-text font-extrabold select-none;
+}
+
+.wrapper {
+    @apply flex flex-col gap-20 w-full h-screen justify-center items-center bg-yellow-400;
+}

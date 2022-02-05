@@ -1,0 +1,1 @@
+component example is a personalized button, input, link, etc.
