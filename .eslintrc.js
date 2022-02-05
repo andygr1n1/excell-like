@@ -21,7 +21,7 @@ module.exports = {
         quotes: ['error', 'single'],
         indent: ['warn', 4],
         '@typescript-eslint/no-explicit-any': 'warn',
-        '@typescript-eslint/no-var-requires': 'warn',
+        '@typescript-eslint/no-var-requires': 'off',
         'prefer-const': [
             'error',
             {

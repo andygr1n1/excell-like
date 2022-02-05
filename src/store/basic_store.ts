@@ -12,6 +12,10 @@ export const moreMoney = action((moneyValue: IMoneyValue) => {
     localStorage.setItem('money-value', JSON.stringify(moneyValue.value))
 })
 
-export const setMoney = action((moneyValue: IMoneyValue, newValue: string) => {
-    moneyValue.value = +newValue
+export const setMoney = action((moneyValue: IMoneyValue) => {
+    const moneyFromLocalStorage = localStorage.getItem('money-value') || ''
+    if (moneyFromLocalStorage) {
+        const moneyValueFromStorage = JSON.parse(moneyFromLocalStorage)
+        moneyValue.value = +moneyValueFromStorage
+    }
 })

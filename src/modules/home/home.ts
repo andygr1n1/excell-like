@@ -10,13 +10,7 @@ export const Home = () => {
     const aboutUsButton = button('About us', './about.html')
     const moneyContainer = document.createElement('span')
 
-    const getMoneyFromLocalStorage = JSON.parse(
-        localStorage.getItem('money-value') || ''
-    )
-
-    if (getMoneyFromLocalStorage) {
-        setMoney(moneyValue, getMoneyFromLocalStorage)
-    }
+    setMoney(moneyValue)
 
     moneyContainer.textContent = `${moneyValue.value.toString()} $`
     if (moneyUpButton)
