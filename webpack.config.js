@@ -20,7 +20,9 @@ const config = {
         },
     },
     output: {
-        filename: '[name].[hash].bundle.js',
+        filename: isProduction
+            ? '[name].[hash].bundle.js'
+            : '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -39,9 +41,9 @@ const config = {
             },
         }),
         new HtmlWebpackPlugin({
-            title: 'Development',
-            filename: 'about.html',
-            template: './modules/about-us/about.html',
+            title: 'Xcell',
+            filename: 'excell-table.html',
+            template: './modules/excell-table/excell-table.html',
             // chunks: [],
         }),
         new CopyPlugin({

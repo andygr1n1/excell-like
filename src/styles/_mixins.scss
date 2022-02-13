@@ -1,0 +1,8 @@
+@mixin button($color: green) {
+    border-radius: 3px;
+    user-select: none;
+    &:hover {
+        background: rgba(228, 228, 228, 0.575);
+        color: $color;
+    }
+}

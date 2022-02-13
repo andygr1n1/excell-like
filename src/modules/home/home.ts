@@ -1,25 +1,14 @@
-import { button } from '../../components/button'
-import { moneyValue, moreMoney, setMoney } from '../../store/basic_store'
-import styles from './home.module.scss'
-
 export const Home = () => {
-    const homeRoot = document.getElementById('homepage')
-    const moneyUpButton = document.getElementById('money-up')
-
-    const moneyCounter = document.getElementById('money-counter')
-    const aboutUsButton = button('About us', './about.html')
-    const moneyContainer = document.createElement('span')
-
-    setMoney(moneyValue)
-
-    moneyContainer.textContent = `${moneyValue.value.toString()} $`
-    if (moneyUpButton)
-        moneyUpButton.onclick = () => {
-            moreMoney(moneyValue)
-            moneyContainer.textContent = `${moneyValue.value.toString()} $`
-        }
-
-    homeRoot?.classList.add(styles['wrapper'])
-    homeRoot?.appendChild(aboutUsButton)
-    moneyCounter?.appendChild(moneyContainer)
+    document.addEventListener('DOMContentLoaded', function () {
+        //dom is fully loaded, but maybe waiting on images & css files
+        const homepage = document.getElementById('homepage')
+        const loading = document.getElementById('loading-animation-sq')
+        const timeout = setTimeout(() => {
+            homepage?.classList.remove('hidden')
+            loading?.classList.remove('flex')
+            loading?.classList.add('hidden')
+            console.log('home')
+            clearTimeout(timeout)
+        }, 1000)
+    })
 }
