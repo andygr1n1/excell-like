@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import 'normalize.css';
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'material-icons/iconfont/material-icons.css';
 
 @layer base {
+    * {
+        @apply m-0 p-0 box-border;
+    }
+
     html,
     body {
-        @apply h-full;
+        @apply h-full font-fira-mono text-sm;
     }
     body {
         @apply flex;
@@ -15,16 +22,18 @@
     }
 
     h1 {
-        @apply py-2 text-5xl xl:text-7xl font-extrabold select-none;
+        @apply py-2 text-3xl xl:text-5xl font-extrabold select-none;
     }
 }
 
 @layer components {
-    .color-title {
+    .logo-title {
         @apply bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text;
     }
 }
 
 @layer utilities {
-    
+    #loadOverlay {
+        display: none;
+    }
 }

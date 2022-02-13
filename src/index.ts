@@ -1,15 +1,18 @@
 import './styles/index.css'
+import './styles/rotating-boxes-loading.css'
+import './styles/excell-menu.scss'
+import './styles/excell-table.scss'
 import { Home } from './modules/home/home'
-import { AboutUs } from './modules/about-us/about-us'
+import { excellTable } from './modules/excell-table/excell-table'
 
 const root = () => {
     const homepage = document.getElementById('homepage')
-    const aboutUs = document.getElementById('about-us')
+    const tablePage = document.getElementById('excell-table')
     //1. first create a new page. For example contacts.html. Then create a div with id='contacts'
 
     //2. now you can bind new html with js
     homepage && Home()
-    aboutUs && AboutUs()
+    tablePage && excellTable()
 }
 
 root()

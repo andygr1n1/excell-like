@@ -1,0 +1,41 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+.table-name-input {
+    @apply flex px-2 pt-2 pb-1
+    text-xl
+    rounded
+    hover:border hover:shadow-xl
+    focus:outline-none  focus:border focus:shadow-xl;
+}
+
+.xcell-button-delete {
+    @include button(rgb(255, 0, 140));
+}
+
+.xcell-button-exit,
+.xcell-button-standart {
+    @include button();
+}
+
+#excell__table {
+    .row {
+        @apply flex w-full h-8  border-b;
+    }
+
+    .row.row-header {
+        @apply sticky top-0 z-20;
+    }
+
+    .cell {
+        @apply flex items-center justify-start h-full min-w-[80px] max-w-[80px] border-r overflow-hidden focus:outline-green-400;
+    }
+
+    .cell.column {
+        @apply justify-center;
+    }
+
+    .cell.row-number {
+        @apply min-w-[34px] max-w-[34px] justify-center sticky left-0 z-10  bg-white;
+    }
+}
