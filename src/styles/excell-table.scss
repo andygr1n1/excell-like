@@ -1,6 +1,27 @@
 @import './mixins.scss';
 @import './variables.scss';
 
+#xcell__table {
+    @apply bg-gray-300 p-5 overflow-hidden;
+}
+
+#xcell__root {
+    @apply flex flex-col w-full h-full bg-white rounded-md p-4;
+}
+
+#excell__header {
+    @apply flex justify-between items-center h-16 w-full;
+}
+
+#excell__toolbar,
+#excell__fx {
+    @apply flex h-8 w-full;
+}
+
+#excell__table {
+    @apply flex flex-col flex-auto w-full overflow-auto h-full border;
+}
+
 .table-name-input {
     @apply flex px-2 pt-2 pb-1
     text-xl
