@@ -3,16 +3,23 @@ import './styles/rotating-boxes-loading.css'
 import './styles/excell-menu.scss'
 import './styles/excell-table.scss'
 import { Home } from './modules/home/home'
-import { excellTable } from './modules/excell-table/excell-table'
+import { Xcell } from './modules/xcell/Xcell'
+import { XcellHeader } from './modules/xcell/components/header/XcellHeader'
+import { XcellToolbar } from './modules/xcell/components/toolbar/XcellToolbar'
+import { XcellFormula } from './modules/xcell/components/formula/XcellFormula'
+import { XcellTable } from './modules/xcell/components/table/XcellTable'
 
 const root = () => {
     const homepage = document.getElementById('homepage')
-    const tablePage = document.getElementById('excell-table')
-    //1. first create a new page. For example contacts.html. Then create a div with id='contacts'
 
-    //2. now you can bind new html with js
     homepage && Home()
-    tablePage && excellTable()
+ 
+
+    const xcell = new Xcell('#xcell__table', {
+        components: [XcellHeader, XcellToolbar, XcellFormula, XcellTable],
+    })
+
+    xcell.render()
 }
 
 root()
