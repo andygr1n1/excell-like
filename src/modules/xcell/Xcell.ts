@@ -41,6 +41,13 @@ export class Xcell {
                 const component = new XcellComponent(componentNode)
                 componentNode.$el?.setAttribute('id', component.component_id)
 
+                // DEBUG
+                // if (component.name) {
+                //     console.log('component.name', component.name)
+                //     window[('c' + component.name) as unknown as window] =
+                //         component
+                // }
+
                 // componentNode.$el.innerHTML = component.toHTML()
                 componentNode.html(component.toHTML())
 

@@ -2,8 +2,7 @@ export class Dom {
     constructor(selector: string | HTMLElement) {
         if (typeof selector === 'string') {
             const htmlElement = document.querySelector(selector)
-            if (!htmlElement)
-                throw new Error('provided selector doesn\'t exist in dom')
+            if (!htmlElement) throw new Error('provided selector is not in dom')
             this.$el = htmlElement
         } else {
             this.$el = selector
@@ -40,6 +39,10 @@ export class Dom {
 
     on(eventType: string, callback: (event: Event) => void) {
         this.$el.addEventListener(eventType, callback)
+    }
+
+    off(eventType: string, callback: (event: Event) => void) {
+        this.$el.removeEventListener(eventType, callback)
     }
 }
 

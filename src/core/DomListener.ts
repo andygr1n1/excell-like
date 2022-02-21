@@ -26,13 +26,21 @@ export class DomListener {
 
             if (!action) return
 
-            this.$root.on(listener, this[action].bind(this))
-            console.log('this:::', this)
+            this[action] = this[action].bind(this)
+
+            this.$root.on(listener, this[action])
         })
     }
 
     removeDomListeners() {
-        console.log('listent to', this.listeners)
+        this.listeners.forEach((listener) => {
+            const action: IEventHandlerNameENUM | undefined =
+                createActionTitle(listener)
+
+            if (!action) return
+
+            this.$root.off(listener, this[action])
+        })
     }
 }
 

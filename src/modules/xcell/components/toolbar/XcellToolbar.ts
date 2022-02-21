@@ -1,7 +1,19 @@
+import { Dom } from '@/core/dom'
 import { XcellCore } from '@/core/XcellCore'
 
 export class XcellToolbar extends XcellCore {
     component_id = 'excell__toolbar'
+
+    constructor($root: Dom) {
+        super($root, {
+            name: 'x-toolbar',
+            listeners: ['click'],
+        })
+    }
+
+    onClick(event: MouseEvent) {
+        console.log('on click excell__toolbar', event.target)
+    }
 
     toHTML(): string {
         return `

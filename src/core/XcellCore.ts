@@ -18,5 +18,9 @@ export class XcellCore extends DomListener {
     init() {
         this.initDomListeners()
     }
+
+    destroy() {
+        this.removeDomListeners()
+    }
     
 }
