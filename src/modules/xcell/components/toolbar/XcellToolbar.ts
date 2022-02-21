@@ -24,7 +24,7 @@ export class XcellToolbar extends XcellCore {
                             </span>
                         </button>
                     </div>
-                   
+
                     <div class="flex gap-3 border-r w-[fit-content] px-3">
                         <button class="xcell-button-standart">
                             <span class="material-icons-outlined">

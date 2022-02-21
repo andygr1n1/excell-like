@@ -1,3 +1,4 @@
+import { $ } from '@/core/dom'
 import type { XcellFormula } from './components/formula/XcellFormula'
 import type { XcellHeader } from './components/header/XcellHeader'
 import type { XcellTable } from './components/table/XcellTable'
@@ -9,36 +10,51 @@ export type IXcellComponents =
     | typeof XcellFormula
     | typeof XcellTable
 
+export type IXcellCreatedComponents =
+    | XcellHeader
+    | XcellToolbar
+    | XcellFormula
+    | XcellTable
+
 interface IXcellOptions {
     components: IXcellComponents[]
 }
 
 export class Xcell {
+    $el: Element | null | undefined
+    components: IXcellComponents[] = []
+    created_components: IXcellCreatedComponents[] = []
+
     constructor(selector: string, options: IXcellOptions) {
         this.$el = document.querySelector(selector)
         this.components = options.components || []
     }
 
-    $el: Element | null | undefined
-    components: IXcellComponents[] = []
-
     getRootNode(): Element {
-        const newNode = document.createElement('div')
-        newNode.setAttribute('id', 'xcell__root')
+        const $xcellRoot = $.create('div', '', 'xcell__root')
 
-        this.components.forEach((XcellComponent) => {
-            const component = new XcellComponent()
-            const componentNode = document.createElement('div')
-            componentNode.setAttribute('id', component.component_id)
-            componentNode.innerHTML = component.toHTML()
+        this.created_components = this.components.map(
+            (XcellComponent): IXcellCreatedComponents => {
+                // const componentNode = document.createElement('div')
 
-            newNode.appendChild(componentNode)
-        })
+                const componentNode = $.create('div', '', '')
+                const component = new XcellComponent(componentNode)
+                componentNode.$el?.setAttribute('id', component.component_id)
 
-        return newNode
+                // componentNode.$el.innerHTML = component.toHTML()
+                componentNode.html(component.toHTML())
+
+                $xcellRoot.append(componentNode?.$el)
+
+                return component
+            }
+        )
+
+        return $xcellRoot.$el
     }
 
     render() {
         this.$el?.insertAdjacentElement('beforeend', this.getRootNode())
+        this.created_components.forEach((component) => component.init())
     }
 }
